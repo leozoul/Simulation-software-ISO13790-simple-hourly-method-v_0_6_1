@@ -40,6 +40,9 @@ Install the following Python packages:
 - **Matplotlib**
 - **NumPy**
 - **Pandas**
+- **Random**
+- **math**
+- **datetime**
 
 You can install them using:
 
