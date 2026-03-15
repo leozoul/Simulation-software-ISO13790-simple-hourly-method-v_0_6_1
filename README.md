@@ -41,8 +41,8 @@ Install the following Python packages:
 - **NumPy**
 - **Pandas**
 - **Random**
-- **math**
-- **datetime**
+- **Math**
+- **Datetime**
 
 You can install them using:
 
