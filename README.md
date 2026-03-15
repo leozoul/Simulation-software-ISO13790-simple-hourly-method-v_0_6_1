@@ -1,6 +1,6 @@
 # Simulation Software – ISO 13790 Simple Hourly Method (v0.6.1)
 
-This repository contains a **building energy simulation software** based on a **modified version of the ISO 13790:2017 Simple Hourly Method**.
+This repository contains a **building energy simulation software** based on a **modified version of the ISO EN13790:2017 Simple Hourly Method**.
 
 ---
 
@@ -9,7 +9,7 @@ This repository contains a **building energy simulation software** based on a **
 The software consists of **two main scripts** that work together:
 
 1. **Building Structure & Calculation Engine**  
-   Implements the building model and calculation procedure according to the **ISO 13790 Simple Hourly Method**.
+   Implements the building model and calculation procedure according to the **ISO EN13790 Simple Hourly Method**.
 
 2. **Graphical User Interface (GUI)**  
    Allows users to:
