@@ -14,7 +14,6 @@ from matplotlib import pyplot as plt
 import matplotlib.dates as mdates
 from TimeLib import TimeList, GetMonthtxt
 from DEYAK_primary_secondary4_final_optimize_sched import create_sched
-import random as rd
 
 class Building():
     
@@ -180,7 +179,7 @@ class Building():
             Fsol += x.Fsh*x.Asol*Isol_value
         return Fsol
     
-    def FintCalc(self):
+    def FintCalc(self): #Needs to be fixed
         Fint = self.People[self.step]*60
         return Fint
         
@@ -1148,49 +1147,49 @@ def SampleBldLowIns(m=1,
     return bld
 
 
-def RandomBld(m=1, 
-              d=1,  
-              deltat=3600, 
-              heat_zones=[[0*3600, 0*3600]],
-              people_zones=[[0*3600, 0*3600]]
-              ):
-    # ---- Customizable parameters
-    Month = m
-    Day = d #30/10 example
-    dt = deltat
-    Occupants = create_sched(people_zones, dt)
-    HC = create_sched(heat_zones, dt)
-    weight = ['Very light', 'Light', 'Medium', 'Heavy', 'Very heavy']
-    # weight = ['Very light']
-    ChosenType = weight[rd.randrange(0,len(weight))] #Very light / Light / Medium / Heavy / Very heavy
-    Tinit = BldTempInit(ChosenType)
-    # ----
-    bld = Building(clim_file='Kozani.xlsx', people=Occupants, bld_type=ChosenType, bld_tinit=Tinit, hvac=HC)
-    # ---- Add building elements
-    # ---- Opaques
-    rl = rd.randrange(30,201)/10
-    rw = rd.randrange(30,201)/10
-    rh = rd.randrange(10,36)/10
-    rulwall = rd.randrange(100,1001)/1000
-    rulroof = rd.randrange(100,1001)/1000
-    rulfloor = rd.randrange(0,501)/1000
-    bld.AddElement(attr='Wall', l=rw, w=rh, o='North', ul=rulwall)
-    bld.AddElement(attr='Wall', l=rl, w=rh, o='East', ul=rulwall)
-    bld.AddElement(attr='Wall', l=rw, w=rh, o='South', ul=rulwall)
-    bld.AddElement(attr='Wall', l=rl, w=rh, o='West', ul=rulwall)
-    bld.AddElement(attr='Roof', l=rl, w=rw, ul=rulroof)
-    bld.AddElement(attr='Floor', l=rl, w=rw, ul=rulfloor)
-    # ---- Windows
-    rlwin = rd.randrange(10,101)/10
-    rwwin = rd.randrange(5,16)/10
-    rulwin = rd.randrange(1000,1501)/1000
-    bld.AddElement(attr='Window', l=rlwin, w=rwwin, ul=rulwin)
-    bld.AssignFrametoOpaque(0, 2)
-    bld.AddElement(attr='Door', l=1, w=2, ul=1.5)
-    bld.AssignFrametoOpaque(1, 1)
-    # ---- Perform ISO13790 - Simple hourly method initialization
-    bld.InitParamsISO(Month, Day)
-    return bld
+# def RandomBld(m=1, 
+#               d=1,  
+#               deltat=3600, 
+#               heat_zones=[[0*3600, 0*3600]],
+#               people_zones=[[0*3600, 0*3600]]
+#               ):
+#     # ---- Customizable parameters
+#     Month = m
+#     Day = d #30/10 example
+#     dt = deltat
+#     Occupants = create_sched(people_zones, dt)
+#     HC = create_sched(heat_zones, dt)
+#     weight = ['Very light', 'Light', 'Medium', 'Heavy', 'Very heavy']
+#     # weight = ['Very light']
+#     ChosenType = weight[rd.randrange(0,len(weight))] #Very light / Light / Medium / Heavy / Very heavy
+#     Tinit = BldTempInit(ChosenType)
+#     # ----
+#     bld = Building(clim_file='Kozani.xlsx', people=Occupants, bld_type=ChosenType, bld_tinit=Tinit, hvac=HC)
+#     # ---- Add building elements
+#     # ---- Opaques
+#     rl = rd.randrange(30,201)/10
+#     rw = rd.randrange(30,201)/10
+#     rh = rd.randrange(10,36)/10
+#     rulwall = rd.randrange(100,1001)/1000
+#     rulroof = rd.randrange(100,1001)/1000
+#     rulfloor = rd.randrange(0,501)/1000
+#     bld.AddElement(attr='Wall', l=rw, w=rh, o='North', ul=rulwall)
+#     bld.AddElement(attr='Wall', l=rl, w=rh, o='East', ul=rulwall)
+#     bld.AddElement(attr='Wall', l=rw, w=rh, o='South', ul=rulwall)
+#     bld.AddElement(attr='Wall', l=rl, w=rh, o='West', ul=rulwall)
+#     bld.AddElement(attr='Roof', l=rl, w=rw, ul=rulroof)
+#     bld.AddElement(attr='Floor', l=rl, w=rw, ul=rulfloor)
+#     # ---- Windows
+#     rlwin = rd.randrange(10,101)/10
+#     rwwin = rd.randrange(5,16)/10
+#     rulwin = rd.randrange(1000,1501)/1000
+#     bld.AddElement(attr='Window', l=rlwin, w=rwwin, ul=rulwin)
+#     bld.AssignFrametoOpaque(0, 2)
+#     bld.AddElement(attr='Door', l=1, w=2, ul=1.5)
+#     bld.AssignFrametoOpaque(1, 1)
+#     # ---- Perform ISO13790 - Simple hourly method initialization
+#     bld.InitParamsISO(Month, Day)
+#     return bld
 
 def my_interp(x, xprev, dt):
     return (dt/3600)*x + (1-dt/3600)*xprev

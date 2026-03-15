@@ -28,7 +28,7 @@ WARNING: Keeping the excel file open while simulating will not update it \n
 Loads are output in an excel file and are timestep-dependent
 plot was replaced by plot due to method deprecation \n
 Fixed bug where leaving some empty input boxes of air supply caused crashes \n
-"Save plot location" changed to "Saved plot & and data" \n
+"Save plot location" changed to "Saved ploy & and data" \n
 Menu option text was slightly changed (Both save and load functions)
 
 v0.5.0 - April 3rd 2024 (operable)\n
