@@ -2,6 +2,8 @@
 
 This repository contains a **building energy simulation software** based on a **modified version of the ISO EN13790:2017 Simple Hourly Method**.
 
+The theoretical background of building modelling and simulation can be found in my Ph.D. dissertation, Section 3.2. Link: https://www.didaktorika.gr/eadd/handle/10442/60655?locale=en
+
 ---
 
 ## Overview
