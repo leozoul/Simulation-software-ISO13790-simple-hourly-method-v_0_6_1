@@ -1,4 +1,4 @@
-# Simulation Software – ISO 13790 Simple Hourly Method (v0.6.1)
+# Simulation Software – ISO 13790 Simple Hourly Method (v0.6.1) - Python
 
 This repository contains a **building energy simulation software** based on a **modified version of the ISO EN13790:2017 Simple Hourly Method**.
 
