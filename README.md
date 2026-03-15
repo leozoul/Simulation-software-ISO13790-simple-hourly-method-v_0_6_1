@@ -11,15 +11,11 @@ Features
   Currently, it is able to consistently simulate Residential and Office buildings.
   Buildings can be saved and loaded from .xlsx (Excel) with specific format
   
-Installation
-  Install python packages:
+Required python modules
   PySimpleGUI version 4
-  matplotlib
-  from TimeLib import TimeList, GetMonthtxt
-  import matplotlib.dates as mdates
-  import numpy as np
-  import pandas as pd
-  import os.path
+  Matplotlib
+  Numpy
+  Pandas
 
 Usage
   Run ISO13790shm_graphical_environment_v0_6_1.py
