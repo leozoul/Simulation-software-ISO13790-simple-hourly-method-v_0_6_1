@@ -18,7 +18,9 @@ Required python modules
   Pandas
 
 Usage
+  Download all files and installed required python modules using pip install
   Run ISO13790shm_graphical_environment_v0_6_1.py
+  Follow steps from Documentation.pdf
 
 Author: Leonidas Zouloumis
 
