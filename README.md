@@ -17,8 +17,7 @@ Installation
 Usage
   Run ISO13790shm_graphical_environment_v0_6_1.py
 
-Author
-Leonidas Zouloumis
+Author: Leonidas Zouloumis
 
 e-mail: leozoul@gmail.com
 
