@@ -13,6 +13,13 @@ Features
   
 Installation
   Install python packages:
+  PySimpleGUI version 4
+  matplotlib
+  from TimeLib import TimeList, GetMonthtxt
+  import matplotlib.dates as mdates
+  import numpy as np
+  import pandas as pd
+  import os.path
 
 Usage
   Run ISO13790shm_graphical_environment_v0_6_1.py
